@@ -4,11 +4,11 @@
 int max(int x[], int b)
 {
   int max=x[0];
-  for (int i=1;i<b;i++)
+  for (int k=1;k<b;k++)
   {
-      if(max<x[i])
+      if(max<x[k])
       {
-        max=x[i];
+        max=x[k];
       }
   }
   return max;
@@ -17,11 +17,11 @@ int max(int x[], int b)
 int min (int x[],int b)
 {
   int min=x[0];
-  for (int i=1;i<b;i++)
+  for (int k=1;k<b;k++)
   {
-      if(min>x[i])
+      if(min>x[k])
       {
-        min=x[i];
+        min=x[k];
       }
   }
   return min;
@@ -31,9 +31,9 @@ int min (int x[],int b)
 float average (int x[] , int b)
 {
   int sum=0;
-  for (int i=0;i<b;i++)
+  for (int k=0;k<b;k++)
   {
-    sum+=x[i];
+    sum+=x[k];
   }
   return (sum/b);
 }
@@ -41,44 +41,44 @@ float average (int x[] , int b)
 
 int mode (int x[], int b)
 {
-  int mv=0,mc=0,c=0;
-  for (int i=0;i<b;i++)
+  int st=0,sg=0,c=0;
+  for (int k=0;k<b;k++)
   {
     c=0;
     for (int j=0;j<b;j++)
     {
-      if (x[i]==x[j])
+      if (x[k]==x[j])
       {
         c++;
       }
     }
-    if (c>mc)
+    if (c>sg)
     {
-      mc=c;
-      mv=x[i];
+      sg=c;
+      st=x[k];
     }
   }
-  return mv;
+  return st;
 }
 
-int factors (int numm, int x[])
+int factors (int nam, int x[])
 {
-  int c=0;int i=2;
-  while(i<=numm)
+  int a=0;int k=2;
+  while(k<=nam)
   {
-    while (numm%i==0)
+    while (nam%k==0)
     {
-      numm/=i;
-      x[c]=i;c++;
+      nam/=k;
+      x[a]=k;a++;
     }
-    i++;
-    for (int j=2 ; j<i ;j++)
+    k++;
+    for (int j=2 ; j<k ;j++)
     {
-      if (i%j==0)
+      if (k%j==0)
       {
-        i++;
+        k++;
       }
     }
   }
-  return c;
+  return a;
 }
